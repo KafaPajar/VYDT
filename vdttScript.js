@@ -3,7 +3,7 @@
 const DEFAULT_VIDEOS = [
   {
     id: 'endfield-edit', title: 'Endfield Edit', creator: 'Kafa Pajar',
-    views: 1800, duration: 'MP4', category: 'edit', thumbnail: '../pictures/1791600198688.jpeg',
+    views: 0, duration: 'MP4', category: 'edit', thumbnail: '../pictures/1791600198688.jpeg',
     video: '../MY EDITS/lv_7693511978068823304_20261018182141.mp4',
     description: 'Salah satu editan dari koleksi pribadi Kafa Pajar. Setiap potongan, transisi, dan pilihan visual menjadi bagian dari cerita yang ingin dibagikan.',
     featured: true, createdAt: 1
