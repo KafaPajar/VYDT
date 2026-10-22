@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b0b0e">
+  <meta name="description" content="VYDT — koleksi editan video Kafa Pajar.">
+  <title>VYDT — Your Visual Archive</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="vdttStyle.css">
+  <script src="vdttScript.js" defer></script>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar" aria-label="Navigasi utama">
+      <a class="brand" href="#home" aria-label="VYDT beranda">
+        <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span>
+        <span>VYDT<span class="brand-period">.</span></span>
+      </a>
+      <div class="sidebar-label">MENU</div>
+      <nav class="side-nav">
+        <button class="nav-item active" data-view="home"><span class="nav-icon">⌂</span> Beranda</button>
+        <button class="nav-item" data-view="library"><span class="nav-icon">▤</span> Koleksi saya</button>
+        <button class="nav-item" data-view="liked"><span class="nav-icon">♡</span> Video disukai</button>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="side-note"><span class="note-dot"></span><span>BUILT FOR THE<br><strong>LOVE OF EDITING.</strong></span></div>
+        <p class="sidebar-credit">PERSONAL VIDEO ARCHIVE<br>© <span id="year">2026</span> VYDT</p>
+      </div>
+    </aside>
+
+    <main class="main-area">
+      <header class="topbar">
+        <button class="icon-button menu-toggle" id="menu-toggle" aria-label="Buka navigasi" aria-expanded="false">☰</button>
+        <div class="breadcrumb"><span class="breadcrumb-muted">VYDT</span><span class="breadcrumb-slash">/</span><span id="breadcrumb-current">Beranda</span></div>
+        <label class="search-box" for="search-input">
+          <span aria-hidden="true">⌕</span>
+          <input id="search-input" type="search" placeholder="Cari editan..." autocomplete="off">
+          <kbd>/</kbd>
+        </label>
+        <button class="add-video-button" id="open-add-video" type="button"><span>＋</span><b>Tambah video</b></button><button class="profile-chip" id="profile-button" aria-label="Informasi kreator"><span class="profile-avatar">K</span><span class="profile-name">Kafa Pajar</span><span class="profile-chevron">⌄</span></button>
+      </header>
+
+      <section id="home-page" class="page page-enter" aria-labelledby="page-heading">
+        <div class="hero">
+          <div class="hero-copy">
+            <div class="eyebrow"><span class="eyebrow-line"></span> PERSONAL VIDEO ARCHIVE</div>
+            <h1>Every frame has<br>a <span>story.</span></h1>
+            <p>Tempat menyimpan karya, mengabadikan momen, dan membagikan hasil editan.</p>
+            <div class="hero-actions"><a class="hero-link" href="#video-grid">JELAJAHI KOLEKSI <span>↘</span></a><button class="hero-add-button" id="hero-add-video" type="button">＋ Tambah editan</button></div>
+          </div>
+          <div class="hero-art" aria-hidden="true">
+            <div class="art-ring ring-one"></div><div class="art-ring ring-two"></div>
+            <div class="art-core"><span>V</span><i></i></div>
+            <div class="art-caption">VISUALS<br><strong>IN MOTION</strong></div>
+            <div class="art-index">01 <span>—</span> 04</div>
+          </div>
+          <div class="hero-index"><span>01</span><span class="index-rule"></span><span>FEATURED COLLECTION</span></div>
+        </div>
+
+        <div class="section-heading" id="collection-heading">
+          <div><div class="eyebrow">THE ARCHIVE</div><h2 id="page-heading">Koleksi <span>editan.</span></h2><p class="section-subtitle" id="result-summary">Semua karya dalam satu tempat.</p></div>
+          <div class="collection-controls">
+            <div class="filter-pills" role="group" aria-label="Filter koleksi">
+              <button class="filter-pill active" data-filter="all">Semua</button>
+              <button class="filter-pill" data-filter="edit">Editan</button>
+            </div>
+            <button class="sort-button" id="sort-button" aria-label="Ubah urutan video">↕ <span>Terbaru</span></button>
+          </div>
+        </div>
+
+        <div class="video-grid" id="video-grid" aria-live="polite"></div>
+        <div class="empty-state" id="empty-state" hidden><span>⌕</span><h3>Belum ada yang cocok.</h3><p>Coba kata kunci lain atau pilih filter berbeda.</p><button class="text-button" id="reset-search">Reset pencarian ↗</button></div>
+
+        <footer class="main-footer"><span>MADE WITH INTENTION.</span><span>VYDT<span class="brand-period">.</span> <span class="footer-separator">/</span> KEEP CREATING.</span></footer>
+      </section>
+
+      <section id="watch-page" class="page watch-page" hidden aria-labelledby="video-title">
+        <button class="back-btn" id="back-button">← <span>Kembali ke koleksi</span></button>
+        <div class="watch-layout">
+          <div class="watch-primary">
+            <div class="watch-video-container"><video id="main-video" controls playsinline preload="metadata" poster="../pictures/1791600198688.jpeg"><source id="video-source" src="../MY EDITS/lv_7693511978068823304_20261018182141.mp4" type="video/mp4">Browser kamu tidak mendukung pemutar video HTML5.</video></div>
+            <div class="video-details">
+              <div class="video-category" id="watch-category">FEATURED EDIT</div>
+              <h1 id="video-title">Endfield edit</h1>
+              <div class="watch-meta-row">
+                <div class="channel-row"><div class="channel-profile">K</div><div class="channel-copy"><h3>Kafa Pajar</h3><p>Creator · Personal archive</p></div><button class="subscribe-btn" id="subscribe-button">＋ Ikuti kreator</button></div>
+                <div class="action-buttons">
+                  <button class="action-button" id="like-button" aria-pressed="false"><span>♡</span><b>Suka</b><small id="like-count">0</small></button>
+                  <button class="action-button" id="dislike-button" aria-pressed="false"><span>⌁</span><b>Kurang suka</b></button>
+                  <button class="action-button" id="share-button"><span>↗</span><b>Bagikan</b></button>
+                  <a class="action-button" id="download-button" href="../MY EDITS/lv_7693511978068823304_20261018182141.mp4" download><span>↓</span><b>Download</b></a>
+                </div>
+              </div>
+              <div class="description-panel"><div class="description-top"><span class="view-count"><span aria-hidden="true">◉</span><span id="watch-views">0 tayangan</span></span><span>•</span><span id="watch-date">Koleksi VYDT</span></div><p id="video-description">Salah satu editan dari koleksi pribadi Kafa Pajar.</p><button class="text-button" id="description-toggle" aria-expanded="false">Lihat selengkapnya <span>⌄</span></button></div>
+            </div>
+            <section class="comments-section"><div class="comments-title"><h2>Ruang komentar</h2><span>01 komentar contoh</span></div><div class="comment-box"><div class="comment-avatar">Y</div><div><strong>yeyy</strong><p>mengantar pizza lagi! ada varian pizza topping semangka lagi ga ini? wkw &gt;O&lt;...</p><span class="comment-time">Komentar contoh · dari desain awal</span></div></div><p class="comment-note">Kolom komentar ini masih berupa contoh tampilan, belum terhubung ke server.</p></section>
+          </div>
+          <aside class="watch-aside"><div class="aside-heading"><div><div class="eyebrow">UP NEXT</div><h2>Jelajahi lagi</h2></div><span class="aside-count" id="related-count">01</span></div><div id="related-videos" class="related-list"></div><div class="aside-note"><span>✳</span><p>Setiap edit punya ceritanya sendiri.<br><strong>Terus berkarya.</strong></p></div></aside>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <div class="modal-backdrop" id="add-video-modal" hidden>
+    <section class="add-video-modal" role="dialog" aria-modal="true" aria-labelledby="add-video-title">
+      <div class="modal-heading"><div><div class="eyebrow">VYDT ARCHIVE</div><h2 id="add-video-title">Tambah <span>video.</span></h2><p>Masukkan editan baru ke koleksi pribadimu.</p></div><button class="modal-close" id="close-add-video" type="button" aria-label="Tutup">×</button></div>
+      <form id="add-video-form">
+        <label class="form-field">Judul video <span>*</span><input name="title" required maxlength="100" placeholder="Contoh: Anime edit — midnight" autocomplete="off"></label>
+        <div class="form-row"><label class="form-field">Nama kreator<input name="creator" maxlength="60" value="Kafa Pajar"></label><label class="form-field">Kategori<select name="category"><option value="edit">Editan</option><option value="anime">Anime</option><option value="gaming">Gaming</option><option value="lainnya">Lainnya</option></select></label></div>
+        <label class="form-field">Deskripsi<textarea name="description" rows="3" maxlength="600" placeholder="Ceritakan sedikit tentang editan ini..."></textarea></label>
+        <label class="form-field file-field">File video <span>*</span><input name="videoFile" type="file" accept="video/*,.mp4,.webm,.mov" required><small>Video disimpan di browser perangkat ini. File besar membutuhkan ruang penyimpanan lebih banyak.</small></label>
+        <label class="form-field file-field">Thumbnail (opsional)<input name="thumbnailFile" type="file" accept="image/*"><small>Jika kosong, VYDT akan memakai gambar sampul sederhana.</small></label>
+        <div class="modal-actions"><button class="cancel-button" id="cancel-add-video" type="button">Batal</button><button class="submit-video-button" type="submit"><span>＋</span> Simpan ke koleksi</button></div>
+      </form>
+    </section>
+  </div>
+  <div class="mobile-backdrop" id="mobile-backdrop"></div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
